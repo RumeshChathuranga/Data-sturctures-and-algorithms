@@ -103,6 +103,8 @@ public class LinkedList {
     }
 
     public void reverse(){
+
+        if(isEmpty()) return;
         //10 -> 20 -> 30
         //10 <- 20 <- 30
         var previous = first;
