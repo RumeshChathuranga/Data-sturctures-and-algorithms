@@ -68,6 +68,22 @@
 
             return isBinarySearchTree(root.leftChild, min, root.value-1) && isBinarySearchTree(root.rightChild, root.value+1, max);
         }
+        public void printNodesAtDistance(int distance){
+            printNodesAtDistance(root,distance);
+        }
+
+        private void printNodesAtDistance(Node root, int distance){
+            if (root == null) return;
+
+            if(distance == 0){
+                System.out.println(root.value);
+                return;
+            }
+
+            printNodesAtDistance(root.leftChild,distance-1);
+            printNodesAtDistance(root.rightChild, distance-1);
+
+        }
 
         private void traversePreOrder(Node root){
 
